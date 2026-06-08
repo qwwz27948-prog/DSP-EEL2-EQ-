@@ -1,24 +1,10 @@
 ### Quantum 6
-
-A refined, multi-stage parallel audio processing chain written in EEL2 for **JamesDSP**'s real-time programmable engine.
-
-**Quantum 6** explores a balanced approach to tonal enhancement, combining surgical EQ, subtle dynamic control, rich harmonic shaping, and spatial refinement. Designed with care to offer musicality and transparency rather than overt coloration, it aims to bring a sense of depth, clarity, and cohesion to various listening material.
-
-#### Key Features
-- 4-node parallel architecture with independent Mid/Side routing
-- Carefully tuned biquad EQ, allpass networks, and tone shaping
-- Multiple waveshaping and saturation flavors (odd/even harmonics, soft clipping, folding, etc.)
-- Warp & spread modules for creative stereo enhancement
-- Lightweight yet expressive dynamic smoothing
-
-The preset is the result of iterative experimentation, blending techniques inspired by both classic and modern DSP approaches.
-
-**Intended Use**  
-Suitable for mastering chains, playback enhancement, or creative mixing. Best appreciated with neutral monitoring or high-quality headphones/IEMs.
-
-**Installation**  
-1. Copy the provided EEL2 code into a new JamesDSP programmable preset.  
-2. Load and adjust the global input/output gain as needed.  
-3. Fine-tune individual node parameters to taste.
-
-Feel free to fork, modify, or build upon it. Feedback and gentle improvements are always welcome.
+A multi-stage parallel audio processing chain implemented in EEL2 for the JamesDSP real-time programmable engine.
+The architecture integrates parametric equalization, dynamic range smoothing, non-linear harmonic generation, and Mid/Side domain processing using a parallel routing topology.
+#### Technical Features
+ * **4-Node Parallel Topology:** Features four independent processing nodes with discrete Mid/Side signal routing and matrix attenuation coefficients per node.
+ * **Filtering & Phase Networks:** Implements standard Biquad EQ structures, configurable multi-stage allpass networks (supporting up to 32 stages), and first-order low-pass/high-pass tone-shaping filters.
+ * **Non-Linear Waveshaping:** Contains dedicated blocks for odd/even harmonic synthesis, trigonometric and hyperbolic soft clipping, and wavefolding algorithms.
+ * **Stereo Field Modification:** Includes warp and spread modules utilizing time-domain smoothing and fixed phase displacement networks.
+ * **Dynamic Signal Smoothing:** Integrates an envelope-following attenuation module with configurable time-constant rate coefficients.
+ * **Conditional Bypass Optimization:** Utilizes control-rate pre-calculation to evaluate state flags, allowing the engine to bypass inactive processing blocks and reduce per-sample execution overhead.
